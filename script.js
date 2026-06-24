@@ -1,25 +1,23 @@
 const menuButton = document.querySelector(".menu-button");
-const siteNav = document.querySelector(".site-nav");
+const siteMenu = document.querySelector("#site-menu");
 
-if (menuButton && siteNav) {
+if (menuButton && siteMenu) {
   menuButton.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
+    const isOpen = siteMenu.classList.toggle("is-open");
     menuButton.setAttribute("aria-expanded", String(isOpen));
   });
 
-  siteNav.querySelectorAll("a").forEach((link) => {
+  siteMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      siteNav.classList.remove("is-open");
+      siteMenu.classList.remove("is-open");
       menuButton.setAttribute("aria-expanded", "false");
     });
   });
-}
 
-document.querySelectorAll("details").forEach((item) => {
-  item.addEventListener("toggle", () => {
-    if (!item.open) return;
-    document.querySelectorAll("details").forEach((other) => {
-      if (other !== item) other.open = false;
-    });
+  document.addEventListener("click", (event) => {
+    if (!siteMenu.contains(event.target) && !menuButton.contains(event.target)) {
+      siteMenu.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
   });
-});
+}
