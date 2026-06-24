@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">삶잇다협동조합 로고</title>
+  <desc id="desc">따뜻한 녹색과 산호색 원형 그래픽 안에 삶잇다 이름을 담은 로고 이미지</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf7ef"/>
+      <stop offset="1" stop-color="#edf7ee"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3f8f64"/>
+      <stop offset="1" stop-color="#f28f70"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#34513d" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="54" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <circle cx="348" cy="315" r="145" fill="#ffffff"/>
+    <path d="M303 328c-38-40-38-104 0-142 38-38 101-37 139 1 38 38 37 101-1 139l-93 93-45-45 45-46c13-13 13-34 0-47-13-13-34-13-47 0s-13 34 0 47l2 0Z" fill="url(#mark)"/>
+    <path d="M392 302c38 40 38 104 0 142-38 38-101 37-139-1-38-38-37-101 1-139l93-93 45 45-45 46c-13 13-13 34 0 47 13 13 34 13 47 0s13-34 0-47h-2Z" fill="#78b66f" opacity=".92"/>
+  </g>
+  <text x="545" y="285" fill="#26382d" font-family="'Pretendard','Noto Sans KR',Arial,sans-serif" font-size="94" font-weight="800">삶잇다</text>
+  <text x="550" y="356" fill="#536558" font-family="'Pretendard','Noto Sans KR',Arial,sans-serif" font-size="34" font-weight="600">웰다잉을 위한 웰빙의 삶</text>
+  <text x="552" y="412" fill="#7b897d" font-family="'Pretendard','Noto Sans KR',Arial,sans-serif" font-size="25" font-weight="500">SALMITDA COOPERATIVE</text>
+</svg>
