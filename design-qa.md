@@ -25,8 +25,8 @@ final result: passed with note
    - Passed. All three visible email actions use `mailto:withmikyung2@gmail.com` with a consistent Korean inquiry subject.
    - `contact.vcf` still contains the same email address.
 
-7. Profile image/logo rendering
-   - Passed by file reference check. The hero, profile section, and `og:image` reference `assets/salmitda-logo.svg`; favicon uses `assets/favicon.svg`.
+7. Profile image rendering
+   - Passed by file reference check. The hero, profile section, and `og:image` reference `assets/profile-photo.jpg`; favicon uses `assets/favicon.svg`.
 
 ## Automated Checks
 
