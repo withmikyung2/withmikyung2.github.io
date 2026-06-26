@@ -8,9 +8,9 @@ final result: passed with note
    - Passed by CSS safeguards: `box-sizing: border-box`, `overflow-x: hidden`, `width: min(100%, var(--max))`, wrapped Korean text, single-column mobile layout, and a small-screen rule below `379px`.
 
 2. Responsive layout
-   - Passed by mobile-first CSS with breakpoints at `560px` and `780px`.
+   - Passed by mobile-first CSS with breakpoints at `680px` and `420px`.
    - Mobile uses stacked buttons, stacked profile/contact sections, and a hamburger menu.
-   - Wider screens use horizontal navigation, two-column hero, two-column contact cards, and a wider `980px` page shell.
+   - Wider screens use horizontal navigation, two-column hero, two-column contact cards, and a wider `1040px` page shell.
 
 3. Thumb-friendly buttons
    - Passed. Primary action buttons use at least `48px` height and the menu button is `44px` square.
@@ -26,7 +26,7 @@ final result: passed with note
    - `contact.vcf` still contains the same email address.
 
 7. Profile image rendering
-   - Passed by file reference check. The hero, profile section, and `og:image` reference `assets/profile-photo.jpg`; favicon uses `assets/favicon.svg`.
+   - Passed by file reference check. The profile section and `og:image` reference `assets/profile-photo.jpg`; favicon uses `assets/favicon.svg`.
 
 ## Automated Checks
 
