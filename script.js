@@ -21,3 +21,13 @@ if (menuButton && siteMenu) {
     }
   });
 }
+
+document.querySelectorAll("[data-accordion] .acc-head").forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".acc-item");
+    if (!item) return;
+
+    const isOpen = item.classList.toggle("open");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+});
