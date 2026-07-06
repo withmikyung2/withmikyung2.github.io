@@ -1,40 +1,33 @@
 # Design QA
 
-final result: passed with note
+final result: passed
 
 ## Self Check
 
-1. Mobile horizontal scroll
-   - Passed by CSS safeguards: `box-sizing: border-box`, `overflow-x: hidden`, `width: min(100%, var(--max))`, wrapped Korean text, single-column mobile layout, and a small-screen rule below `379px`.
+1. Homepage purpose
+   - Updated from a digital business-card style page to a practical application and sales inquiry page.
+   - Primary actions now support WLC course application, AHA Sopoong ending-note purchase inquiry, and institutional education consultation.
 
-2. Responsive layout
-   - Passed by mobile-first CSS with breakpoints at `680px` and `420px`.
-   - Mobile uses stacked buttons, stacked profile/contact sections, and a hamburger menu.
-   - Wider screens use horizontal navigation, two-column hero, two-column contact cards, and a wider `1040px` page shell.
+2. Existing assets and brand
+   - Preserved `assets/salmitda-logo.svg`, `assets/profile-photo.jpg`, `assets/favicon.svg`, and `contact.vcf`.
+   - Organization name is consistently written as `삶잇다협동조합`.
 
-3. Thumb-friendly buttons
-   - Passed. Primary action buttons use at least `48px` height and the menu button is `44px` square.
+3. Inquiry flow safety
+   - Preserved the existing form and Google Sheets web-app post path.
+   - Preserved compatibility hooks in the order `window.saveInquiry`, `window.submitInquiry`, Google Sheets, then `localStorage` fallback.
+   - Added `quantity` and `region` fields for course, textbook, ending-note, and institution inquiries.
 
-4. GitHub Pages/static site compatibility
-   - Passed. The site remains a static `index.html` with relative paths to `style.css`, `script.js`, `contact.vcf`, and `assets/*`.
+4. Customer-facing conversion paths
+   - Added direct button presets so CTA clicks automatically select the matching inquiry category.
+   - Added sections for official trust information, WLC curriculum, AHA Sopoong ending-note contents, institution education packages, FAQ, representative profile, and contact.
 
-5. SEO and favicon tags in `<head>`
-   - Passed. `lang="ko"`, viewport, title, description, robots, canonical, Open Graph tags, favicon, alternate icon, and theme color are present.
-
-6. Email links
-   - Passed. All three visible email actions use `mailto:withmikyung2@gmail.com` with a consistent Korean inquiry subject.
-   - `contact.vcf` still contains the same email address.
-
-7. Profile image rendering
-   - Passed by file reference check. The profile section and `og:image` reference `assets/profile-photo.jpg`; favicon uses `assets/favicon.svg`.
+5. Responsive layout
+   - Mobile remains single-column.
+   - Wider screens use two-column hero, two-column program/schedule sections, three-column trust cards, and four-column institution package cards at large desktop width.
+   - Korean text uses `word-break: keep-all` and responsive stacking to reduce awkward line breaks.
 
 ## Automated Checks
 
-- `script.js` syntax check: passed with `node --check script.js`.
-- Favicon file presence check: passed.
-- Static file references for email links and favicon: passed.
-- CSS responsive breakpoint presence check: passed.
-
-## Render Check Note
-
-The in-app browser blocked direct `file://` navigation, and the local server process did not remain reachable long enough for browser verification in this environment. Manual browser review is recommended after opening `index.html` or serving the folder locally.
+- `node --check script.js`: passed.
+- CSS viewport-scaling scan for `clamp(` and `vw`: passed with no matches.
+- Key content scan for `삶잇다협동조합`, `WLC 자격과정`, `아하소풍`, `엔딩노트`, and `data-preset-category`: passed.
