@@ -4,9 +4,10 @@ final result: passed
 
 ## Self Check
 
-1. Homepage purpose
-   - Updated from a digital business-card style page to a practical application and sales inquiry page.
-   - Primary actions now support WLC course application, AHA Sopoong ending-note purchase inquiry, and institutional education consultation.
+1. Homepage structure
+   - Changed from one long page to a short main page plus separate detail pages.
+   - Main page now keeps only the hero, quick navigation cards, and representative summary.
+   - Detail content moved to `wlc.html`, `notebook.html`, `education.html`, and `contact.html`.
 
 2. Existing assets and brand
    - Preserved `assets/salmitda-logo.svg`, `assets/profile-photo.jpg`, `assets/favicon.svg`, and `contact.vcf`.
@@ -18,16 +19,17 @@ final result: passed
    - Added `quantity` and `region` fields for course, textbook, ending-note, and institution inquiries.
 
 4. Customer-facing conversion paths
-   - Added direct button presets so CTA clicks automatically select the matching inquiry category.
-   - Added sections for official trust information, WLC curriculum, AHA Sopoong ending-note contents, institution education packages, FAQ, representative profile, and contact.
+   - Top menu now links to separate pages instead of scrolling through a long one-page layout.
+   - CTA links on content pages open `contact.html` and pass the inquiry category through the URL.
+   - `script.js` reads the category query string and automatically selects the matching form option.
 
 5. Responsive layout
-   - Mobile remains single-column.
-   - Wider screens use two-column hero, two-column program/schedule sections, three-column trust cards, and four-column institution package cards at large desktop width.
+   - Mobile visitors no longer need to scroll through all details on the homepage.
+   - Each page is shorter and focused on one task.
    - Korean text uses `word-break: keep-all` and responsive stacking to reduce awkward line breaks.
 
 ## Automated Checks
 
 - `node --check script.js`: passed.
-- CSS viewport-scaling scan for `clamp(` and `vw`: passed with no matches.
-- Key content scan for `삶잇다협동조합`, `WLC 자격과정`, `아하소풍`, `엔딩노트`, and `data-preset-category`: passed.
+- New page/link scan for `index.html`, `wlc.html`, `notebook.html`, `education.html`, and `contact.html`: passed.
+- Form routing scan for `URLSearchParams` and Google Sheets connection: passed.

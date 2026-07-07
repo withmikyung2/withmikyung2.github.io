@@ -82,6 +82,13 @@ const formStatus = document.querySelector("#form-status");
 const googleSheetsWebAppUrl = "https://script.google.com/macros/s/AKfycbx0gsWtL7fu00S4x-GfCJS9SkOv_94erLYt_6_fNqjgUfYekkfqMZxS6-ksRw7Ktlc_fA/exec";
 
 if (inquiryForm && formStatus) {
+  const categoryField = inquiryForm.querySelector("#inquiry-category");
+  const initialCategory = new URLSearchParams(window.location.search).get("category");
+
+  if (categoryField && initialCategory) {
+    categoryField.value = initialCategory;
+  }
+
   const setFormStatus = (message, type = "") => {
     formStatus.textContent = message;
     formStatus.className = `form-status ${type}`.trim();
