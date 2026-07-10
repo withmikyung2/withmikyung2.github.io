@@ -244,6 +244,41 @@
         font-weight: 700;
       }
 
+      .standalone-header {
+        border-bottom: 1px solid var(--wlc-line);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .standalone-header .section-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        max-width: 1120px;
+        min-height: 78px;
+      }
+
+      .standalone-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--wlc-deep);
+        font-size: 22px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .standalone-brand img {
+        width: 42px;
+        height: 42px;
+      }
+
+      .standalone-header span:last-child {
+        color: #52635a;
+        font-size: 17px;
+        font-weight: 800;
+      }
+
       @media (max-width: 900px) {
         .hero-summary-grid,
         .purpose-grid,
@@ -280,23 +315,14 @@
   </head>
   <body>
     <a class="skip-link" href="#main">본문 바로가기</a>
-    <header class="site-header">
-      <nav class="nav-shell" aria-label="주요 메뉴">
-        <a class="brand" href="index.html">
+    <header class="standalone-header">
+      <div class="section-inner">
+        <div class="standalone-brand">
           <img src="assets/salmitda-logo.svg" alt="" aria-hidden="true">
-          <span>삶잇다협동조합</span>
-        </a>
-        <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="메뉴 열기">
-          <span></span><span></span><span></span>
-        </button>
-        <ul class="site-menu" id="site-menu">
-          <li><a href="index.html">홈</a></li>
-          <li><a href="wlc.html">WLC 과정</a></li>
-          <li><a class="active" href="notebook.html">엔딩노트</a></li>
-          <li><a href="education.html">기관교육</a></li>
-          <li><a href="contact.html">신청/문의</a></li>
-        </ul>
-      </nav>
+          <strong>아하소풍 엔딩노트 WLC 2급 실습판</strong>
+        </div>
+        <span>독립 제작 페이지</span>
+      </div>
     </header>
 
     <main id="main">
@@ -307,7 +333,7 @@
           <p class="hero-lead">11주 과정에서 배운 내용을 내 삶의 기록, 가족과의 대화, 현장 실습 자료로 이어가도록 만든 작성형 엔딩노트임.</p>
           <div class="button-row">
             <a class="btn btn-primary" href="contact.html?category=WLC%202%EA%B8%89%20%EC%97%94%EB%94%A9%EB%85%B8%ED%8A%B8%20%EB%AC%B8%EC%9D%98">기관/단체 문의</a>
-            <a class="btn btn-outline" href="notebook.html">기존 엔딩노트 보기</a>
+            <a class="btn btn-outline" href="#chapters">11개 장 보기</a>
           </div>
           <div class="hero-summary-grid" aria-label="WLC 2급 엔딩노트 핵심 구성">
             <article>
@@ -326,7 +352,7 @@
         </div>
       </section>
 
-      <section class="wlc-note-section">
+      <section class="wlc-note-section" id="chapters">
         <div class="section-inner">
           <div class="section-title">
             <p class="section-label">Purpose</p>
